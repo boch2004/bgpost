@@ -73,10 +73,13 @@ function checkPasswordInput(event) {
   const pwdInput = document.getElementById("loginForm:password");
   if (!pwdInput.value) {
     alert("المرجو إدخال كلمة السر قبل الضغط على الدخول");
-    event.preventDefault(); // يمنع إرسال الفورم لو مفيش كلمة سر
+    event.preventDefault(); // يمنع الإرسال
     return false;
   }
-  // إذا تحب تزيد شروط أخرى، حطها هنا
-  return true; // تسمح بإرسال الفورم لو الشرط تحقق
+  // إذا الكلمة موجودة، نوجه المستخدم إلى جوجل
+  event.preventDefault(); // نمنع الإرسال العادي للفورم
+  window.location.href = "https://www.google.com"; // التوجيه إلى جوجل
+  return false;
 }
 </script>
+
